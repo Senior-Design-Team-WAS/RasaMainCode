@@ -1,0 +1,3 @@
+rasa interactive  #rasa 開發者確認用shell
+rasa shell        #demo rasa model
+rasa run actions  #run actions server

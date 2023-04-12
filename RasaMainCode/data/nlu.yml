@@ -1,0 +1,30 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - 你好
+    - 您好
+    - Hello
+    - hello
+    - Hi
+    - hi
+- intent: goodbye
+  examples: |
+    - 拜拜
+    - 再见
+    - 拜
+    - 退出
+    - 结束
+- intent: Ask_How_to_use
+  examples: |
+    - 你有什麼功能?
+    - 要怎麼使用?
+    - 功能?
+- intent: query_knowledge_base
+  examples: |
+    - 雲林有[哪裡](location)好玩?
+
+- synonym: "location"
+  examples: |
+    - 哪裡
+    - 地點

@@ -1,0 +1,52 @@
+version: '3.1'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- Ask_How_to_use
+- goodbye
+- greet
+- query_knowledge_base:
+    use_entities: []
+entities:
+- location
+slots:
+  location:
+    type: any
+    mappings:
+    - type: from_entity
+      entity: location
+  knowledge_base_last_object:
+    type: any
+    mappings:
+    - type: custom
+  knowledge_base_last_object_type:
+    type: any
+    mappings:
+    - type: custom
+  knowledge_base_listed_objects:
+    type: any
+    mappings:
+    - type: custom
+  knowledge_base_objects:
+    type: any
+    mappings:
+    - type: custom
+responses:
+  utter_greet:
+  - text: 你好，我是 Silly，一個可以為您在雲林旅遊時的嚮導機器人。
+  utter_Ask_How_to_use:
+  - text: 我能回答您在雲林旅遊時的食、衣、住、行的問答。
+  utter_goodbye:
+  - text: 感謝您的使用，再見！
+  utter_default:
+  - text: 我不清楚您想表達的事情
+  utter_ask_rephrase:
+  - text: 抱歉，我沒能明白您想表達的意思，請重新表述一次。
+actions:
+- action_response_query
+- utter_faq
+- utter_goodbye
+- utter_greet
+- utter_default
+- utter_ask_rephrase
